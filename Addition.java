@@ -3,34 +3,35 @@ import java.util.*;
 
 public class Addition { // as the class name that contains the main method is "Addition", you have to save this file as "Addition.java", and submit "Addition.java" to Codecrunch
   public static void main(String[] args) {
-    IntegerScanner sc = new IntegerScanner(System.in);
+    LongScanner sc = new LongScanner(System.in);
     while (true) {
       // Here is the full solution for this super simple practice task in pseudo code
       // read two integers A and B
       // if both are -1, stop
       // output A+B
-      long a = sc.nextInt();
-      long b = sc.nextInt();
-      if(a == -1 && b == -1){
+      long a = sc.nextLong();
+      long b = sc.nextLong();
+      if(a == -1L && b == -1L){
         break;
       }
       else{
-        System.out.println(a+b);
+        System.out.println(Long.toUnsignedString(a+b)); //parse as unsigned long to print
       }
     }
   }
 }
 
-class IntegerScanner { // coded by Ian Leow, we will use this quite often in CS2010 PSes
+//Edit IntegerScanner to accomodate long datatype
+class LongScanner { // coded by Ian Leow, we will use this quite often in CS2010 PSes
   BufferedInputStream bis;
-  IntegerScanner(InputStream is) {
+  LongScanner(InputStream is) {
     bis = new BufferedInputStream(is, 1000000);
   }
 
-  public long nextInt() {
-    long result = 0;
+  public long nextLong() {
+    long result = 0L;
     try {
-      long cur = bis.read();
+      int cur = bis.read();
       if (cur == -1)
         return -1;
 
