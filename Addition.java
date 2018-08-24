@@ -27,10 +27,10 @@ class IntegerScanner { // coded by Ian Leow, we will use this quite often in CS2
     bis = new BufferedInputStream(is, 1000000);
   }
 
-  public int nextInt() {
-    int result = 0;
+  public long nextInt() {
+    long result = 0;
     try {
-      int cur = bis.read();
+      long cur = bis.read();
       if (cur == -1)
         return -1;
 
