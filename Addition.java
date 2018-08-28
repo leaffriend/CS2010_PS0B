@@ -37,7 +37,6 @@ class BigIntScanner { // coded by Ian Leow, we will use this quite often in CS20
     bis = new BufferedInputStream(is, 1000000);
   }
 
-
   public BigInteger nextBigInt() {
     String result = "";
     try {
@@ -48,24 +47,6 @@ class BigIntScanner { // coded by Ian Leow, we will use this quite often in CS20
       while ((cur < 48 || cur > 57) && cur != 45) {
         cur = bis.read();
       }
-/*
-      boolean negate = false;
-      if (cur == 45) {
-        negate = true;
-        cur = bis.read();
-      }
-
-      while (cur >= 48 && cur <= 57) {
-        result = result*10 + (cur-48);
-        cur = bis.read();
-      }
-
-      if (negate) {
-        return -result;
-      }
-      return result;
-  */
-
       if (cur == 45) {
         result = "-";
         cur = bis.read();
@@ -75,7 +56,6 @@ class BigIntScanner { // coded by Ian Leow, we will use this quite often in CS20
         result = result + Character.toString((char) cur);
         cur = bis.read();
       }
-      //System.out.println(result);
       return new BigInteger(result);
     }
     catch (IOException ioe) {
